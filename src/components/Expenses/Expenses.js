@@ -1,12 +1,24 @@
+import React from "react";
 import Card from "../UI/Card";
-import ExpenseItem from "./ExpenceItem/ExpenseItem";
+import ExpenseItem from "./ExpenceItem";
+import ExpensesFilter from "./ExpensesFilter";
 import "./Expenses.css";
 
-const Expenses = ({ expences }) => {
+const Expenses = ({ expenses, onFilter, onYearSelect, selectedYear }) => {
+
+  const filterChangeHandler = (selectedYear) => {
+    onFilter(selectedYear);
+    onYearSelect(selectedYear);
+  };
+
   return (
     <Card className="expenses">
-      {expences.map(({ id, ...itemExpences }) => (
-        <ExpenseItem key={id} {...itemExpences} />
+      <ExpensesFilter
+        selected={selectedYear}
+        onChangeFilter={filterChangeHandler}
+      />
+      {expenses.map(({ id, ...itemExpenses }) => (
+        <ExpenseItem key={id} {...itemExpenses} />
       ))}
     </Card>
   );
