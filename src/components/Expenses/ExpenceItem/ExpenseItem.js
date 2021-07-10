@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "../../UI/Card";
 import ExpenseDate from "../ExpenseDate";
 import "./ExpenceItem.css";
 
 const ExpenseItem = ({ date, title, amount }) => {
-//   const [dynamicTitle, setDynamicTitle] = useState(title);
-  //   const clickHandler = () => setDynamicTitle("Updated!");
 
   return (
     <Card className="expense-item">
@@ -14,7 +12,6 @@ const ExpenseItem = ({ date, title, amount }) => {
         <h2>{title}</h2>
         <div className="expense-item__price">${amount}</div>
       </div>
-      {/* <button onClick={clickHandler}>Change title</button> */}
     </Card>
   );
 };

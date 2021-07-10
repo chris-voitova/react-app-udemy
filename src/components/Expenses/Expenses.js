@@ -4,10 +4,9 @@ import ExpenseItem from "./ExpenceItem";
 import ExpensesFilter from "./ExpensesFilter";
 import "./Expenses.css";
 
-const Expenses = ({ expenses, onFilter, onYearSelect, selectedYear }) => {
-
+const Expenses = ({ expenses, onFilterExpenses, onYearSelect, selectedYear }) => {
   const filterChangeHandler = (selectedYear) => {
-    onFilter(selectedYear);
+    onFilterExpenses(selectedYear);
     onYearSelect(selectedYear);
   };
 
