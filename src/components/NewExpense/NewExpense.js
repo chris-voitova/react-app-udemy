@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ExpenseForm from "./ExpenseForm/ExpenseForm";
+import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 
 const NewExpense = ({ onAddExpense }) => {
@@ -12,6 +12,7 @@ const NewExpense = ({ onAddExpense }) => {
     };
 
     onAddExpense(expenceData);
+    switchFormState();
   };
 
   const switchFormState = () => setFormOpen(!formOpen);

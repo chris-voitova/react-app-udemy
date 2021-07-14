@@ -28,7 +28,6 @@ const ExpenseForm = ({ onSaveExpenseData, onClose }) => {
     setTitle("");
     setAmount("");
     setDate("");
-    onClose();
   };
 
   return (
