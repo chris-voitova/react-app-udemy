@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../UI/Card";
-import ExpenseItem from "./ExpenceItem";
 import ExpensesFilter from "./ExpensesFilter";
+import ExpensesList from "./ExpensesList";
 import "./Expenses.css";
 
 const Expenses = ({
@@ -14,7 +14,6 @@ const Expenses = ({
     onFilterExpenses(selectedYear);
     onYearSelect(selectedYear);
   };
-  const isExpensesExist = expenses.length;
 
   return (
     <Card className="expenses">
@@ -22,14 +21,7 @@ const Expenses = ({
         selected={selectedYear}
         onChangeFilter={filterChangeHandler}
       />
-      {console.log(!!expenses.length)}
-      {isExpensesExist ? (
-        expenses.map(({ id, ...itemExpenses }) => (
-          <ExpenseItem key={id} {...itemExpenses} />
-        ))
-      ) : (
-        <div className="empty-state-text">No expenses for this period</div>
-      )}
+      <ExpensesList expenses={expenses} />
     </Card>
   );
 };
