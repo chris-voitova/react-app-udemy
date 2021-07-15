@@ -19,13 +19,13 @@ const INITIAL_EXPENSES = [
     id: Math.random().toString(),
     title: "Car Insurance",
     amount: 94.15,
-    date: new Date(2021, 5, 17),
+    date: new Date(2021, 4, 17),
   },
   {
     id: Math.random().toString(),
     title: "Iphone",
     amount: 999.99,
-    date: new Date(2021, 5, 20),
+    date: new Date(2021, 1, 20),
   },
 ];
 
